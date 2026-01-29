@@ -13,6 +13,7 @@ const FeedbackCard = ({
   designation,
   company,
   image,
+  className = 'react-tech'
 }) => (
   <motion.div
     variants={fadeIn("", "spring", index * 0.5, 0.75)}
@@ -20,8 +21,10 @@ const FeedbackCard = ({
   >
     <p className='text-white font-black text-[48px]'>"</p>
 
-    <div className='mt-1'>
-      <p className='text-white tracking-wider text-[18px]'>{testimonial}</p>
+    <div className='mt-1 relative'>
+      <div className={className}></div>
+
+      <p className='text-white tracking-wider text-[18px] whitespace-pre-wrap'>{testimonial}</p>
 
       <div className='mt-7 flex justify-between items-center gap-1'>
         <div className='flex-1 flex flex-col'>
@@ -51,7 +54,7 @@ const Feedbacks = () => {
       >
         <motion.div variants={textVariant()}>
           <p className={styles.sectionSubText}>What others say</p>
-          <h2 className={styles.sectionHeadText}>Testimonials.</h2>
+          <h2 className={styles.sectionHeadText}>技能展示</h2>
         </motion.div>
       </div>
       <div className={`-mt-20 pb-14 ${styles.paddingX} flex flex-wrap gap-7`}>
